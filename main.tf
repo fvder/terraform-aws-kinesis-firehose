@@ -32,8 +32,8 @@ resource "aws_kinesis_firehose_delivery_stream" "this" {
       bucket_arn          = var.s3_bucket_arn
       prefix              = var.s3_prefix
       error_output_prefix = var.s3_error_output_prefix
-      buffer_size         = var.buffering_size
-      buffer_interval     = var.buffering_interval
+      buffering_size         = var.buffering_size
+      buffering_interval     = var.buffering_interval
 
       s3_backup_mode     = "Disabled"
       kms_key_arn        = var.enable_s3_encryption ? var.s3_kms_key_arn : null
